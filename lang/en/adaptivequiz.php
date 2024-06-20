@@ -98,6 +98,8 @@ The Adaptive Quiz can be configured to
 This description and the testing process in this activity are based on <a href="http://www.rasch.org/memo69.pdf">Computer-Adaptive Testing: A Methodology Whose Time Has Come</a> by John Michael Linacre, Ph.D. MESA Psychometric Laboratory - University of Chicago. MESA Memorandum No. 69.';
 $string['pluginadministration'] = 'Adaptive Quiz';
 $string['pluginname'] = 'Adaptive Quiz';
+$string['privacy:metadata:adaptivequiz_attempt'] = 'Adaptive quiz attempt';
+$string['privacy:metadata:adaptivequiz_attempt:userid'] = 'Adaptive quiz attempt User ID';
 $string['nonewmodules'] = 'No Adaptive Quiz instances found';
 $string['adaptivequizname'] = 'Name';
 $string['adaptivequizname_help'] = 'Enter the name of the Adaptive Quiz instance';
