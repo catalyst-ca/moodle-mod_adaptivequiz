@@ -42,8 +42,8 @@ class mod_adaptivequiz_generator extends testing_module_generator {
         $record = (object)(array)$record;
 
         if (!isset($record->questionpool) && !isset($record->questionpoolnamed)) {
-            throw new coding_exception('either \'questionpool\' or \'questionpoolnamed\' property must be specified when '.
-                'generating an adaptive quiz instance');
+            $defaultpoolid = $this->get_default_question_pool_id();
+            $record->questionpool = $defaultpoolid;
         }
 
         // Named question pool takes precedence over the 'questionpool' setting.
@@ -81,6 +81,11 @@ class mod_adaptivequiz_generator extends testing_module_generator {
         }
 
         return parent::create_instance($record, $options);
+    }
+
+    private function get_default_question_pool_id() {
+        global $DB;
+        return $DB->get_field('question_categories', 'id', ['contextid' => 1]);
     }
 
     /**
